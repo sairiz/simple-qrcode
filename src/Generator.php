@@ -203,7 +203,14 @@ class Generator
             $filepath = base_path().$filepath;
         }
 
-        $this->imageMerge = file_get_contents($filepath);
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        );      
+
+        $this->imageMerge = file_get_contents($filepath, false, stream_context_create($arrContextOptions));
         $this->imagePercentage = $percentage;
 
         return $this;
