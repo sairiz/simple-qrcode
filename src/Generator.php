@@ -206,8 +206,7 @@ class Generator
         $arrContextOptions=array(
             "ssl" => [
                 "verify_peer" => false,
-                "verify_peer_name" => false,
-                "cafile" => "/etc/ssl/certs/ca-certificates.crt",
+                "verify_peer_name" => false
             ],
         );      
 
