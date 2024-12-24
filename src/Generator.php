@@ -204,10 +204,11 @@ class Generator
         }
 
         $arrContextOptions=array(
-            "ssl"=>array(
-                "verify_peer"=>false,
-                "verify_peer_name"=>false,
-            ),
+            "ssl" => [
+                "verify_peer" => true,
+                "verify_peer_name" => true,
+                "cafile" => "/etc/ssl/certs/ca-certificates.crt",
+            ],
         );      
 
         $this->imageMerge = file_get_contents($filepath, false, stream_context_create($arrContextOptions));
